@@ -1,0 +1,136 @@
+/* Bao bọc toàn bộ thanh điều hướng */
+/* Bao bọc toàn bộ thanh điều hướng */
+.sot-navbar {
+    /* Đổ một lớp sương mù gradient từ đen nhạt ở trên xuống trong suốt ở dưới */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+    border-bottom: none;
+    /* Xóa viền thừa để video đi qua mượt */
+    box-shadow: none;
+
+    position: absolute;
+    /* LỆNH ĂN TIỀN: Bóp Navbar bay lơ lửng bám đè lên video */
+    width: 100%;
+    /* Căng ngang 100% bám mép */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+/* Khoanh vùng nội dung ở giữa màn hình */
+.navbar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    /* Đẩy mạnh Logo và Button dính sát vào mép tường */
+}
+
+/* ---------------- CỤM LOGO ---------------- */
+.navbar-logo img {
+    height: 100px;
+    /* Bạn có thể chỉnh lại cho vừa với logo của bạn */
+    transition: transform 0.3s ease;
+    /* Tạo độ mượt khi phóng to */
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.05);
+    /* Hé nở to ra khi rê chuột vào */
+}
+
+/* ------------- CỤM CÁC ĐƯỜNG LINK ------------- */
+.navbar-links {
+    display: flex;
+    gap: 40px;
+    margin-left: 50px;
+    flex: 1;
+    /* Cướp lấy toàn bộ không gian trống */
+    justify-content: center;
+    /* Nằm ngay chính giữa không gian đó */
+
+    /* XOÁ BỎ margin-left và padding-right CŨ ĐI NHÉ */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 15px;
+    /* Khe hở giữa 2 nút */
+}
+
+.navbar-links a {
+    color: #f1eee5;
+    /* Màu xám bạc sương mù */
+    text-decoration: none;
+    font-family: "Fz Patua One", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Bắt buộc in hoa toàn bộ */
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* 🎩 PHÉP THUẬT: Thanh gạch dưới ngầm (Hiệu ứng siêu xịn của SOT) */
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    /* Mặc định chiều dài bằng 0 (vô hình) */
+    height: 2px;
+    background-color: #2ed59e;
+    /* Xanh lục bảo dạ quang SOT */
+    transition: width 0.35s ease;
+    /* Chạy từ trái sang rất mượt */
+}
+
+/* Khi người dùng lướt chuột vào chữ */
+.navbar-links a:hover {
+    color: #45e5b0;
+    /* Trắng sáng */
+    text-shadow: 0 0 10px rgba(46, 213, 158, 0.4);
+    /* Phát sáng dạ quang */
+}
+
+/* Bản thiết kế gốc cho 2 chiếc nút */
+.navbar-actions button {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 20px;
+    padding: 8px 20px;
+    color: white;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+
+    /* 🎩 Bí thuật làm nút thô ráp như gỗ bào của Cướp Biển (không vuông vức) */
+    border: none;
+    border-radius: 2px 7px 3px 6px;
+}
+
+.btn-play {
+    background-color: #903c2a;
+    /* Màu đỏ đất sét / mạn thuyền đỏ */
+}
+
+.btn-login {
+    background-color: #435b62;
+    /* Màu xám xanh biển tối (giống rêu/đá) */
+}
+
+/* Hiệu ứng ấn nẩy khi ai đó nhấp chuột vào */
+.navbar-actions button:hover {
+    background-color: #2ed59e;
+    color: black;
+    /* Làm nút sáng rực lên */
+    transform: scale(1.05);
+    /* Nở lớn ra một chút */
+}

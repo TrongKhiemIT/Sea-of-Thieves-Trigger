@@ -1,0 +1,400 @@
+/* Khoanh vùng toàn bộ khu vực dưới Navbar giới hạn bằng đúng chiều cao máy tính */
+/* Đường viền đỏ thẫm vắt ngang ranh giới chân trời */
+/* ---- 1. KHÔI PHỤC LẠI KHUNG HERO GỐC BỊ XÓA NHẦM ---- */
+.home-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+/* ---- 2. LÀM ĐEN PHẦN NỀN DƯỚI ĐƯỜNG ĐỎ ---- */
+.home-hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* Bịt kín khoảng trống từ đáy màn hình lên đến vạch y hệt ảnh */
+    background-image: url('/site-bg.png');
+    /* Hãy đổi chữ nen-bien.jpg thành tên file ảnh của bạn */
+    background-size: cover;
+    /* Lệnh này bắt buộc phải có để ảnh ko bị lặp lại mà được kéo giãn vừa khít */
+    background-position: center;
+    /* Lấy mảng trung tâm của bức ảnh để lấp vào khu vực 60px này */
+    z-index: 4;
+    /* Nằm lót ngay dưới đường viền gạch đỏ (z-index 5) */
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #7b0a09;
+    z-index: 5;
+    box-shadow: 0px 2px 15px rgba(200, 0, 0, 0.5);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+}
+
+/* Ép Video chìm xuống sau cùng (z-index âm) và giãn nén mượt mà full màn hình */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Không bị méo hình khi kéo giãn màn hình */
+    z-index: -2;
+}
+
+/* Lớp "kính râm" đen phủ đè lên trên video với độ mờ 40% */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Trang trí cụm văn bản ở giữa */
+.hero-content {
+    text-align: left;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 110px;
+    /* Nhìn ảnh thấy chữ lớn khủng khiếp */
+    margin: 0;
+    line-height: 0.9;
+    /* Mẹo siêu việt: Giúp đẩy nhích 2 nửa trên và dưới dính sát vào nhau */
+}
+
+.white-text {
+    color: #ffffff;
+    /* SOT Gold (Hoặc nếu bạn thích màu trắng tinh thì dùng #fff) */
+    text-shadow: 3px 2px 0px #000;
+}
+
+.green-text {
+    color: #1cd0a2;
+    /* Chuẩn Lục bảo (Hoặc #3fe5b5) */
+    text-shadow: 3px 2px 0px #000;
+}
+
+
+.hero-subtitle {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 35px;
+    color: #f1eee5;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-shadow: 2px 3px 0px #000;
+}
+
+/* ---- KHỐI REVIEW NẰM NGANG BÊN DƯỚI ---- */
+.review-banner {
+    background-color: #111417;
+    /* Đen gỗ nhám */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    /* Nhìn ảnh thấy khoảng cách giữa Logo và Chữ khá rộng */
+    padding: 20px 80px;
+
+    /* Mẹo đẩy khối này trồi lên đè ngang cằm của Video */
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Căn nó vào chính giữa màn hình ngang */
+    z-index: 10;
+
+    /* 🎩 Bí thuật Cắt Gọt: Dùng Polygon cắt 4 góc bị méo nát y hệt vết vệt sơn (Chất SOT) */
+    clip-path: polygon(2% 0%, 98% 3%, 100% 97%, 0% 100%);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.review-logo {
+    display: flex;
+    align-items: center;
+    border-right: 3px solid #233138;
+    /* Vạch kẻ ngăn cách mờ mờ ở giữa */
+    padding-right: 40px;
+}
+
+.review-logo img {
+    height: 50px;
+}
+
+.review-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chữ số xanh lục bảo */
+.review-score {
+    font-family: "Fz Patua One", "Georgia", "serif";
+    color: #1cd0a2;
+    /* Chuẩn Lục bảo SOT */
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Chữ trích dẫn nhỏ màu trắng */
+.review-quote {
+    font-family: "Fz Patua One", "Georgia", "serif";
+    /* Lời trích dẫn SOT hay dùng font vuông vắn dễ đọc */
+    color: #f1eee5;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 5px 0 0 0;
+    letter-spacing: 1px;
+}
+
+/* ---- KHU VỰC THÂN TRANG WEB (BÊN DƯỚI VIDEO) ---- */
+/* ---- KHU VỰC THẦN THOẠI BÊN DƯỚI ---- */
+.home-content {
+    /* TRÁT MẠNH ẢNH NỀN VÀO ĐÂY NÀY */
+    background-image: url('/site-bg.png');
+    background-size: cover;
+    background-position: top center;
+    /* 🎩 Bí thuật Cướp biển: Khóa chặt ảnh nền! Khi bạn cuộn chuột, ảnh sẽ đứng yên tạo hiệu ứng cực kỳ có chiều sâu */
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 120px 5%;
+}
+
+/* Chia đôi chiến tuyến: Trái Text - Phải Hình */
+.adventure-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+}
+
+/* --- CỘT TRÁI: Văn Bản --- */
+.adventure-text {
+    flex: 1;
+    max-width: 600px;
+    /* 👉 Lệnh 1: Bắt khối chữ nhổ neo khỏi vị trí trung tâm và trồi thẳng lên nóc nhà! */
+    align-self: flex-start;
+    /* 👉 Lệnh 2: Sau khi nó đã lên đỉnh, bạn dùng margin-top để cẩu nó xuống lại vừa tầm mắt. Bạn hãy tự do thay số 50px này thành 0px hoặc 150px thả ga cho đến khi vừa ý nhé! */
+    margin-top: 300px;
+}
+
+.title-green {
+    font-family: "Fz Patua One", sans-serif;
+    color: #1cd0a2;
+    /* Xanh Lục Bảo SOT */
+    font-size: 110px;
+    /* Chữ to như cột buồm */
+    margin: 0;
+    line-height: 0.9;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000;
+    /* Viền bóng đen để chữ không bị chìm */
+}
+
+.adventure-desc {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 20px;
+    color: #f1eee5;
+    line-height: 1.6;
+    margin-top: 30px;
+    font-weight: normal;
+}
+
+/* --- CỘT PHẢI: Chùm Hình Lộn Xộn --- */
+.adventure-images {
+    flex: 1;
+    position: relative;
+    height: 1350px;
+    /* Xin một rạp chiếu phim cao 600px để quăng ảnh vào */
+}
+
+/* 🎩 Định dạng chung cho 2 cái khung ảnh */
+/* Trang bị áo giáp cắt viền cho toàn bộ 3 ảnh */
+.img-wrapper {
+    position: absolute;
+    /* Đổ bóng cho giấy rách */
+    filter: drop-shadow(-15px 20px 20px rgba(0, 0, 0, 0.8));
+    /* Bạn có thể xóa Transition cũ đi vì bây giờ ảnh chạy live-action theo chuột */
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ép mọi tấm ảnh vừa khít vào khung mà không bị méo */
+
+    /* Cắt lởm chởm mép ảnh hệt như xé giấy */
+    clip-path: polygon(1% 4%, 98% 1%, 99% 97%, 2% 99%);
+}
+
+/* Ảnh 1 (Treo ở mốc cao nhất trên cùng) */
+.img-1 {
+    width: 700px;
+    height: 410px;
+    top: 0px;
+    /* Cắm mốc ở Opx */
+    right: 20px;
+    /* Hơi lệch phải */
+    z-index: 1;
+}
+
+/* Ảnh 2 (Nằm lơ lửng ở khúc giữa) */
+.img-2 {
+    width: 700px;
+    height: 410px;
+    top: 330px;
+    /* Đẩy tụt xuống 330px so với nãy để không đè ảnh 1 */
+    right: 100px;
+    /* Lệch qua đuôi trái một chút cho giống bài lộn xộn */
+    z-index: 2;
+}
+
+/* Ảnh 3 (Rớt xuổng tận đáy) */
+.img-3 {
+    width: 700px;
+    height: 410px;
+    top: 880px;
+    /* Cắm mốc ở Đáy */
+    right: 0px;
+    /* Lại lệch qua phải cho zíc zắc */
+    z-index: 3;
+}
+
+/* Đảo ngược từ Trái-Phải thành Phải-Trái cho các khối có chữ "reverse" */
+.adventure-container.reverse {
+    flex-direction: row-reverse;
+    /* ĐÂY CHÍNH LÀ PHÉP THUẬT LỘN NGƯỢC! */
+    margin-top: -100px;
+    /* Cách ly xa cái khối số 1 ở trên ra 150px cho dễ thở */
+}
+
+/* ========================================================
+   KHU VỰC THỨ TƯ: BẢNG TRUYỀN TIN (NEWS SECTION)
+   ======================================================== */
+
+.news-section {
+    max-width: 1400px;
+    margin: 50px auto 0 auto;
+    /* Đẩy tuột xuống 200px để không đụng vào 3 bức ảnh lơ lửng của khối Phiêu lưu cũ */
+    padding: 0 5%;
+}
+
+/* Lưới thẻ bài (Dàn tự động theo màn hình) */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Cứ cột nào nhỏ hơn 350px thì ép nó rớt xuống hàng dưới */
+    gap: 40px;
+}
+
+/* Phong cách tấm thẻ bài lót mạn thuyền */
+.news-card {
+    background-color: #12161b;
+    /* Màu gỗ mun xỉn đen */
+    outline: 2px solid #233138;
+    /* Đóng một lớp đường viền rỉ sét ở ngoài */
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    /* Cấm mọi nội dung trong thẻ phình tràn viền */
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng đưa chuột nhảy trồi lên, viền sáng lấp lánh nướng ngọc */
+.news-card:hover {
+    outline: 2px solid #1cd0a2;
+    /* Sáng màu lục bảo */
+    background-color: #1a1e23;
+    transform: translateY(-8px);
+}
+
+/* Khung chứa ảnh bìa bị Cắt Mép Cưa hình tam giác lồi lõm dưới đáy */
+.news-image {
+    height: 250px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 85% 92%, 75% 100%, 65% 90%, 55% 100%, 45% 90%, 35% 100%, 25% 92%, 15% 100%, 5% 90%, 0 100%);
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Khi người dùng lướt chuột, tấm ảnh bên trong từ từ phình to ra hù dọa họ */
+.news-card:hover .news-image img {
+    transform: scale(1.1);
+}
+
+/* Khung đựng chữ bên dưới tấm ảnh */
+.news-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nét chữ ghi Ngày Tháng Năm sinh */
+.news-date {
+    font-size: 14px;
+    color: #a4a4a4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Nét chữ Tiêu đề (Màu vàng Hải Tặc) */
+.news-info h3 {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 26px;
+    color: #e5cd85;
+    /* SOT Gold */
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.news-info p {
+    font-size: 16px;
+    color: #f1eee5;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Nút mũi tên Đọc Tiếp giả danh link */
+.news-readmore {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 18px;
+    color: #1cd0a2;
+    text-decoration: none;
+    margin-top: auto;
+    /* Tự động ép hút cái nút xuống dưới đáy dẫu cho bài viết dài/ngắn */
+    transition: color 0.3s;
+}
+
+.news-card:hover .news-readmore {
+    color: #fff;
+    /* Nổi chớp trắng nụ cười Cướp biển khi trượt chuột */
+}

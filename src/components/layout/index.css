@@ -1,0 +1,25 @@
+/* Phông chữ SOT dạng bình thường */
+@font-face {
+    font-family: "Bones Alternative";
+    src: url("/fonts/DFVN Them Bones Alternative.otf") format("opentype");
+    /* Lưu ý chữ font không có S */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Phông chữ SOT dạng viền khắc rỗng lõi (Inline) */
+@font-face {
+    font-family: "Burlesk Inline";
+    src: url("/fonts/burlesk-inline.otf") format("opentype");
+    /* Lưu ý chữ font không có S */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fz Patua One";
+    src: url("/fonts/FzPatuaOne.ttf") format("truetype");
+    /* Lưu ý chữ font không có S */
+    font-weight: normal;
+    font-style: normal;
+}

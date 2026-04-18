@@ -1,0 +1,17 @@
+/* Dọn dẹp lề mặc định của tất cả các thẻ HTML */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  /* Màu xám đen nền tối Cướp Biển */
+  color: #fff;
+  /* Chữ màu trắng */
+  min-height: 100vh;
+}

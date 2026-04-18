@@ -1,0 +1,89 @@
+.about-page-container {
+    background-image: url('/site-bg.png');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 180px 5% 100px 5%; /* push down below navbar */
+    display: flex;
+    justify-content: center;
+}
+
+.about-content-box {
+    max-width: 1000px;
+    background-color: rgba(18, 22, 27, 0.95);
+    border: 2px solid #233138;
+    box-shadow: 0px 10px 40px rgba(0,0,0,0.8);
+    padding: 80px 60px;
+    text-align: center;
+    clip-path: polygon(1% 1%, 99% 0%, 100% 99%, 0% 100%);
+}
+
+.about-title {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 80px;
+    color: #e5cd85; /* SOT Gold */
+    margin: 0 0 10px 0;
+    line-height: 1;
+    text-shadow: 4px 4px 0px #000;
+}
+
+.about-subtitle {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 35px;
+    color: #1cd0a2; /* SOT Green */
+    margin: 0 0 50px 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.about-desc {
+    font-size: 20px;
+    color: #f1eee5;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: justify;
+    font-family: "Arial", sans-serif;
+}
+
+.about-desc b {
+    color: #1cd0a2;
+}
+
+.about-features {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 250px;
+    background: #111417;
+    padding: 40px 30px;
+    border-top: 3px solid #1cd0a2;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+}
+
+.feature-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.9);
+    border-top: 3px solid #e5cd85;
+}
+
+.feature-item h3 {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 26px;
+    color: #e5cd85;
+    margin: 0 0 20px 0;
+}
+
+.feature-item p {
+    color: #a4a4a4;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
