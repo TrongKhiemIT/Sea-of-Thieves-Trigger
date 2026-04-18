@@ -57,9 +57,7 @@
 
 ## 📸 Hình Ảnh Giao Diện Demo
 
-*(Note cho chủ Repo: Đừng quên chụp màn hình trang web thực tế của bạn rồi thả file ảnh vào đây nhé!)*
-
-![Trang Chủ SOT Trigger](https://via.placeholder.com/800x400/12161b/1cd0a2?text=Trang+Chủ+SOT+Trigger)
+![Trang Chủ SOT Trigger](public/anhdemo.jpg)
 *▲ Giao diện Trang Chủ đậm chất phiêu lưu với phong nền sống động tĩnh tại lột tả chiều sâu không gian biển cả.*
 
 ---
