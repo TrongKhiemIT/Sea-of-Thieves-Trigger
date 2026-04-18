@@ -1,0 +1,144 @@
+.login-page-container {
+    background-image: url('/site-bg.png');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    /* Nhường chỗ cho Navbar */
+}
+
+.login-box {
+    width: 550px;
+    background-color: #050608;
+    border: 2px solid #233138;
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.9);
+    padding: 50px 40px;
+    text-align: center;
+    clip-path: polygon(2% 0, 98% 2%, 100% 98%, 0 100%);
+    position: relative;
+}
+
+/* Biểu tượng logo thu nhỏ ngự trên đỉnh */
+.login-skull {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #12161b;
+    border: 2px solid #233138;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.login-title {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 40px;
+    color: #e5cd85;
+    /* SOT Gold */
+    margin: 20px 0 10px 0;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.login-subtitle {
+    color: #a4a4a4;
+    font-size: 16px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Các thẻ Input điền thông tin */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    color: #1cd0a2;
+    /* SOT Green */
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.sot-input {
+    width: 100%;
+    background-color: #1a1e23;
+    border: 1px solid #233138;
+    color: #f1eee5;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.sot-input:focus {
+    border: 1px solid #1cd0a2;
+    box-shadow: 0 0 10px rgba(28, 208, 162, 0.3);
+    background-color: #111417;
+}
+
+/* Nút Đăng nhập khổng lồ */
+.btn-submit-login {
+    background-color: #1cd0a2;
+    /* Chuẩn lục bảo */
+    color: #000;
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 24px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 2px 7px 3px 6px;
+    /* Bào gỗ cướp biển */
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(28, 208, 162, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-submit-login:hover {
+    background-color: #45e5b0;
+    transform: scale(1.05);
+}
+
+.btn-submit-login:active {
+    transform: scale(0.95);
+}
+
+/* Thanh quên mật khẩu / Đăng ký */
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-link {
+    color: #a4a4a4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-link:hover {
+    color: #e5cd85;
+    /* Sáng màu vàng khi hover */
+    text-decoration: underline;
+}

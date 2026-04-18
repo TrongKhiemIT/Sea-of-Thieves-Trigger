@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import "./index.css";
 
 export default function Navbar() {
+    const navigate = useNavigate();
+
     return (
         <nav className="sot-navbar">
             <div className="navbar-container">
@@ -18,8 +20,7 @@ export default function Navbar() {
                 </div>
                 <div className="navbar-actions">
                     <button className="btn-play">CHƠI NGAY</button>
-                    <button className="btn-login">
-                        {/* Bạn có thể tải icon hình đầu lâu nhỏ xíu bỏ vào public nếu muốn y hệt ảnh */}
+                    <button className="btn-login" onClick={() => navigate('/login')}>
                         🏴‍☠️ ĐĂNG NHẬP
                     </button>
                 </div>

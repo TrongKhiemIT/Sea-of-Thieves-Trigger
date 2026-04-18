@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 export default function Home() {
+    const navigate = useNavigate();
     // ---- THÊM BỘ THEO DÕI BÁNH XE CHUỘT ----
     const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
@@ -136,7 +138,7 @@ export default function Home() {
                     <div className="news-grid">
 
                         {/* Thẻ Tin Tức 1 */}
-                        <div className="news-card">
+                        <div className="news-card" onClick={() => navigate('/wiki')}>
                             <div className="news-image">
                                 {/* Bạn nhớ tải 3 bức ảnh mới quăng vào mục public rồi sửa tên ở đây nhé */}
                                 <img src="./Homeface/Update14.1.jpg" alt="News 1" />
@@ -145,12 +147,12 @@ export default function Home() {
                                 <span className="news-date">17 Tháng 4, 2026</span>
                                 <h3>CẬP NHẬT MÙA 14 ĐÃ RA MẮT</h3>
                                 <p>Khám phá những cơ chế vũ khí độc lạ, ngắm nhìn biển khơi từ trên cao bằng Súng Lao Móc và hàng tá mỹ phẩm lộng lẫy...</p>
-                                <a href="/wiki" className="news-readmore">ĐỌC TIẾP ➔</a>
+                                <span className="news-readmore">ĐỌC TIẾP ➔</span>
                             </div>
                         </div>
 
                         {/* Thẻ Tin Tức 2 */}
-                        <div className="news-card">
+                        <div className="news-card" onClick={() => navigate('/trigger')}>
                             <div className="news-image">
                                 <img src="./Homeface/Hatauma.jpg" alt="News 2" />
                             </div>
@@ -158,12 +160,12 @@ export default function Home() {
                                 <span className="news-date">10 Tháng 4, 2026</span>
                                 <h3>CẨM NANG HẠ GỤC TÀU MA</h3>
                                 <p>Toàn tập bí kíp Sinh Tồn từ các Huyền thoại Cướp biển giúp bạn vơ vét toàn bộ rương sọ quỷ mà không tiêu tốn một giọt mồ hôi...</p>
-                                <a href="/trigger" className="news-readmore">ĐỌC TIẾP ➔</a>
+                                <span className="news-readmore">ĐỌC TIẾP ➔</span>
                             </div>
                         </div>
 
                         {/* Thẻ Tin Tức 3 */}
-                        <div className="news-card">
+                        <div className="news-card" onClick={() => navigate('/community')}>
                             <div className="news-image">
                                 <img src="./Homeface/sukiencongdong.jpg" alt="News 3" />
                             </div>
@@ -171,16 +173,12 @@ export default function Home() {
                                 <span className="news-date">5 Tháng 4, 2026</span>
                                 <h3>SỰ KIỆN CỘNG ĐỒNG SỐ 12</h3>
                                 <p>Đăng nhập cuối tuần này để x2 Vàng, Thăng Hạng mọi Phân khu và giật luôn miễn phí bộ buồm cánh dơi độc quyền bằng cách xem stream...</p>
-                                <a href="/community" className="news-readmore">ĐỌC TIẾP ➔</a>
+                                <span className="news-readmore">ĐỌC TIẾP ➔</span>
                             </div>
                         </div>
 
                     </div>
 
-                    {/* Nút Xem Tất Cả nằm trang trọng ở đáy dải tin tức */}
-                    <div style={{ textAlign: "center", marginTop: "70px" }}>
-                        <button className="btn-hero-play" style={{ fontSize: "22px" }}>XEM TẤT CẢ THÔNG TIN</button>
-                    </div>
                 </div>
 
             </div> {/* (ĐÂY LÀ THẺ ĐÓNG CỦA HOME-CONTENT TỪ TRƯỚC ĐÓ NHÉ) */}

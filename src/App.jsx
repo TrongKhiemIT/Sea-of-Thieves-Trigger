@@ -5,6 +5,7 @@ import Wiki from "./pages/Wiki";
 import Trigger from "./pages/Trigger";
 import Community from "./pages/Community";
 import About from "./pages/About";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/trigger" element={<Trigger />} />
           <Route path="/community" element={<Community />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

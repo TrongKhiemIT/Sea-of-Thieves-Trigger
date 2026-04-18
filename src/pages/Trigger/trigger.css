@@ -1,0 +1,155 @@
+.trigger-page-container {
+    background-image: url('/site-bg.png');
+    /* Hoặc tải 1 tấm hình nền riêng xịn hơn */
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 120px 5% 100px 5%;
+}
+
+.trigger-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.trigger-header h1 {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 60px;
+    color: #e5cd85;
+    /* SOT Gold */
+    text-shadow: 4px 4px 0px #000;
+}
+
+/* KHUNG LƯỚI LẶP DỮ LIỆU ĐỘNG */
+/* ÉP KHUÔN LƯỚI Y HỆT BẢNG TRUYỀN TIN (3 Cột ngang) */
+.trigger-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Cố định ép luôn luôn chia 3 cột */
+    gap: 30px;
+    max-width: 1200px;
+    /* Thu hẹp khung lại cho vừa mắt giống trang chủ */
+    margin: 0 auto;
+}
+
+
+.trigger-card {
+    background-color: #12161b;
+    border: 2px solid #233138;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.trigger-card:hover {
+    transform: translateY(-10px);
+    border-color: #1cd0a2;
+    /* Sáng màu ngọc lục bảo */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+.trigger-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid #233138;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.trigger-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Căng đều khung đẩy nút xuống đáy */
+}
+
+.trigger-tag {
+    color: #1cd0a2;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.trigger-info h2 {
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 26px;
+    color: #f1eee5;
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+.trigger-info p {
+    color: #a4a4a4;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.btn-read-trigger {
+    margin-top: auto;
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 18px;
+    color: #000;
+    background-color: #e5cd85;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.btn-read-trigger:hover {
+    background-color: #f1eee5;
+    /* Trắng sáng */
+}
+
+/* Khoảng cách xé rào giữa 3 khu vực Cẩm Nang Lớn */
+.trigger-subtitle {
+    color: #1cd0a2;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Tụ họp các Nút Bấm ở giữa màn hình */
+.trigger-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* Nút lúc đang tắt */
+.tab-btn {
+    background-color: transparent;
+    color: #f1eee5;
+    font-family: "Fz Patua One", sans-serif;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: 2px solid #233138;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    border-color: #1cd0a2;
+    transform: translateY(-3px);
+}
+
+/* NÚT LÚC ĐANG ĐƯỢC CHỌN SẼ SÁNG RỰC LÊN (Trạng thái Active) */
+.tab-btn.active {
+    background-color: #1cd0a2;
+    color: #000;
+    border-color: #1cd0a2;
+    box-shadow: 0 0 20px rgba(28, 208, 162, 0.4);
+}
+
+/* Giữ cho khung gầm bên dưới không bị giật lên xuống khi chuyển tab */
+.trigger-content-area {
+    min-height: 500px;
+}
